@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
 @import "./styles/themes.css";
 
 @theme {
@@ -14,4 +15,11 @@
   --color-radial-1: var(--radial-1);
   --color-radial-2: var(--radial-2);
   --color-linear-1: var(--linear-1);
+
+  --font-primary: "Inter Variable";
+}
+
+.bottomNav {
+  background-color: var(--glass-1);
+  backdrop-filter: blur(24px);
 }

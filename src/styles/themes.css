@@ -9,15 +9,16 @@
   --dark-text-2: #c0cbf5;
   --dark-text-3: #000000;
   --dark-badge: #1f2a52;
+  --dark-glass-1: rgba(36, 44, 74, 0.1);
   --dark-radial-1: radial-gradient(
     circle,
     rgba(7, 18, 63, 1) 0%,
-    rgba(12, 14, 22, 1) 100%
+    rgba(12, 14, 22, 1) 65%
   );
   --dark-radial-2: radial-gradient(
     circle,
     rgba(30, 4, 58, 1) 0%,
-    rgba(12, 14, 22, 1) 100%
+    rgba(12, 14, 22, 1) 65%
   );
   --dark-linear-1: linear-gradient(
     180deg,
@@ -36,15 +37,16 @@
   --light-text-2: #6b7392;
   --light-text-3: #ffffff;
   --light-badge: #c1cdfb;
+  --light-glass-1: rgba(200, 208, 239, 0.1);
   --light-radial-1: radial-gradient(
     circle,
     rgba(218, 226, 255, 1) 0%,
-    rgba(236, 238, 249, 1) 100%
+    rgba(236, 238, 249, 1) 65%
   );
   --light-radial-2: radial-gradient(
     circle,
     rgba(239, 224, 255, 1) 0%,
-    rgba(236, 238, 249, 1) 100%
+    rgba(236, 238, 249, 1) 65%
   );
   --light-linear-1: linear-gradient(
     180deg,
@@ -63,9 +65,11 @@ html.dark {
   --text-2: var(--dark-text-2);
   --text-3: var(--dark-text-3);
   --badge: var(--dark-badge);
+  --glass-1: var(--dark-glass-1);
   --radial-1: var(--dark-radial-1);
   --radial-2: var(--dark-radial-2);
   --linear-1: var(--dark-linear-1);
+  color-scheme: dark;
 }
 
 html.light {
@@ -81,4 +85,5 @@ html.light {
   --radial-1: var(--light-radial-1);
   --radial-2: var(--light-radial-2);
   --linear-1: var(--light-linear-1);
+  color-scheme: light;
 }

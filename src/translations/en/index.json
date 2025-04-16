@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "RojasDev"
+  },
+  "banner": {
+    "title": "Diego Raul",
+    "subtitle": "Full Stack Developer",
+    "description": "A really passionated developer to always develop software of quality using modern technologies",
+    "buttons": {
+      "contact": "Get in touch",
+      "projects": "View my work"
+    }
+  }
+}
