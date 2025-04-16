@@ -1,0 +1,84 @@
+:root {
+  /* Dark Theme */
+  --dark-primary: #6680ff;
+  --dark-bg-1: #0c0e16;
+  --dark-bg-2: #303547;
+  --dark-bg-3: #ffffff;
+  --dark-border-1: #303547;
+  --dark-text-1: #ffffff;
+  --dark-text-2: #c0cbf5;
+  --dark-text-3: #000000;
+  --dark-badge: #1f2a52;
+  --dark-radial-1: radial-gradient(
+    circle,
+    rgba(7, 18, 63, 1) 0%,
+    rgba(12, 14, 22, 1) 100%
+  );
+  --dark-radial-2: radial-gradient(
+    circle,
+    rgba(30, 4, 58, 1) 0%,
+    rgba(12, 14, 22, 1) 100%
+  );
+  --dark-linear-1: linear-gradient(
+    180deg,
+    rgba(27, 60, 192, 1) 0%,
+    rgba(4, 34, 154, 1) 100%
+  );
+
+  /* Light Theme */
+
+  --light-primary: #3156e9;
+  --light-bg-1: #eceef9;
+  --light-bg-2: #edf0fa;
+  --light-bg-3: #000000;
+  --light-border-1: #b6c0e8;
+  --light-text-1: #000000;
+  --light-text-2: #6b7392;
+  --light-text-3: #ffffff;
+  --light-badge: #c1cdfb;
+  --light-radial-1: radial-gradient(
+    circle,
+    rgba(218, 226, 255, 1) 0%,
+    rgba(236, 238, 249, 1) 100%
+  );
+  --light-radial-2: radial-gradient(
+    circle,
+    rgba(239, 224, 255, 1) 0%,
+    rgba(236, 238, 249, 1) 100%
+  );
+  --light-linear-1: linear-gradient(
+    180deg,
+    rgba(27, 60, 192, 1) 0%,
+    rgba(4, 34, 154, 1) 100%
+  );
+}
+
+html.dark {
+  --primary: var(--dark-primary);
+  --bg-1: var(--dark-bg-1);
+  --bg-2: var(--dark-bg-2);
+  --bg-3: var(--dark-bg-3);
+  --border-1: var(--dark-border-1);
+  --text-1: var(--dark-text-1);
+  --text-2: var(--dark-text-2);
+  --text-3: var(--dark-text-3);
+  --badge: var(--dark-badge);
+  --radial-1: var(--dark-radial-1);
+  --radial-2: var(--dark-radial-2);
+  --linear-1: var(--dark-linear-1);
+}
+
+html.light {
+  --primary: var(--light-primary);
+  --bg-1: var(--light-bg-1);
+  --bg-2: var(--light-bg-2);
+  --bg-3: var(--light-bg-3);
+  --border-1: var(--light-border-1);
+  --text-1: var(--light-text-1);
+  --text-2: var(--light-text-2);
+  --text-3: var(--light-text-3);
+  --badge: var(--light-badge);
+  --radial-1: var(--light-radial-1);
+  --radial-2: var(--light-radial-2);
+  --linear-1: var(--light-linear-1);
+}

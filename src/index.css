@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@import "./styles/themes.css";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-bg-3: var(--bg-3);
+  --color-border-1: var(--border-1);
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-badge: var(--badge);
+  --color-radial-1: var(--radial-1);
+  --color-radial-2: var(--radial-2);
+  --color-linear-1: var(--linear-1);
+}
