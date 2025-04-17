@@ -10,5 +10,23 @@
       "contact": "Get in touch",
       "projects": "View my work"
     }
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "A summary of my professional experience in IT industry",
+    "items": {
+      "1": {
+        "title": "Astro and React Lover",
+        "description": "I'm a programmer who's truly passionate about this profession. I always like to implement the best possible solution."
+      },
+      "2": {
+        "title": "Strong UX - UI skills",
+        "description": "Extensive knowledge in UI-UX design to create quality user interfaces using tools such as Figma, Dribble, and others."
+      },
+      "3": {
+        "title": "Backend Developer",
+        "description": "I develop high-quality software thanks to Clean Architecture. I always use these principles for quality software."
+      }
+    }
   }
 }

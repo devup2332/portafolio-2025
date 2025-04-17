@@ -25,7 +25,7 @@ const links = [
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <div className="px-8 h-screen grid place-items-center">
+    <div className="h-screen grid place-items-center">
       <div className="text-text-1">
         <h1 className="text-5xl font-bold">{t("banner.title")}</h1>
         <h2 className="text-base mt-3 font-medium">{t("banner.subtitle")}</h2>

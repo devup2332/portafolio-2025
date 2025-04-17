@@ -9,7 +9,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const { setTheme, theme } = useThemeStore();
   return (
-    <div className="flex justify-between px-8 mt-6">
+    <div className="flex justify-between mt-6">
       <Button
         variant="ghost"
         className="px-0 flex items-center gap-2 text-text-1"

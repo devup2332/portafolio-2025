@@ -1,11 +1,10 @@
-import React from "react";
 import HomeIcon from "../Icons/HomeIcon";
 import UserIcon from "../Icons/UserIcon";
 import ExperienceIcon from "../Icons/ExperienceIcon";
 import ProjectsIcon from "../Icons/ProjectsIcon";
 import EmailIcon from "../Icons/EmailIcon";
 
-export const sections = [
+const sections = [
   {
     icon: HomeIcon,
     label: "Home",
@@ -33,10 +32,13 @@ const BottomNav = () => {
   return (
     <div className="px-8  fixed bottom-6 w-full left-1/2 -translate-x-1/2">
       <div className="flex justify-around items-center  border-[1px] rounded-md border-border-1 h-[60px] bottomNav">
-        {sections.map((section) => {
+        {sections.map((section, index) => {
           const Icon = section.icon;
           return (
-            <Icon className="w-7 cursor-pointer h-6 text-text-1 stroke-current" />
+            <Icon
+              key={index}
+              className="w-7 cursor-pointer h-6 text-text-1 stroke-current"
+            />
           );
         })}
       </div>
