@@ -28,5 +28,9 @@
         "description": "I develop high-quality software thanks to Clean Architecture. I always use these principles for quality software."
       }
     }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "A summary of my professional experience in IT industry"
   }
 }

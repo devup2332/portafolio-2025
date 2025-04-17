@@ -13,7 +13,7 @@ import DatabaseIcon from "../Icons/DatabaseIcon";
 const About = () => {
   const { t } = useTranslation();
   return (
-    <div className="">
+    <div>
       <h1 className="text-text-1 text-[32px] font-bold">{t("about.title")}</h1>
       <h2 className="text-text-2 text-sm">{t("about.subtitle")}</h2>
 

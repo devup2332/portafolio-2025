@@ -26,7 +26,7 @@ const Banner = () => {
   const { t } = useTranslation();
   return (
     <div className="h-screen grid place-items-center">
-      <div className="text-text-1">
+      <div className="text-text-1 -translate-y-16">
         <h1 className="text-5xl font-bold">{t("banner.title")}</h1>
         <h2 className="text-base mt-3 font-medium">{t("banner.subtitle")}</h2>
         <p className="text-text-2 mt-4">{t("banner.description")}</p>
