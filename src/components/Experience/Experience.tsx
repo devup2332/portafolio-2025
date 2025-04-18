@@ -1,4 +1,4 @@
-import { experience } from "@/data/experience";
+import data from "@/data";
 import { useTranslation } from "react-i18next";
 
 const Experience = () => {
@@ -8,10 +8,10 @@ const Experience = () => {
       <h1 className="text-text-1 text-[32px] font-bold">
         {t("experience.title")}
       </h1>
-      <h2 className="text-text-2 text-sn">{t("experience.subtitle")}</h2>
+      <h2 className="text-text-2 text-sn mt-3">{t("experience.subtitle")}</h2>
 
       <div className="mt-16 grid gap-18">
-        {experience.map((item, index) => {
+        {data.experience.map((item, index) => {
           return (
             <div key={index}>
               <div className="flex items-center justify-between">

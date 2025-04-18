@@ -1,46 +1,10 @@
-type Experience = {
-  companyName: string;
-  role: string;
-  date: string;
-  description: {
-    en: string[];
-    es: string[];
-  };
-  technologies: Technology[];
-};
-
-type Technology =
-  | "React"
-  | "TypeScript"
-  | "Node.js"
-  | "Express"
-  | "MongoDB"
-  | "PostgreSQL"
-  | "DynamoDB"
-  | "Prisma"
-  | "GraphQL"
-  | "Apollo"
-  | "Next.js"
-  | "Tailwind CSS"
-  | "Chakra UI"
-  | "Material UI"
-  | "Styled Components"
-  | "Sass"
-  | "CSS Modules"
-  | "Git"
-  | "Material UI"
-  | "GitHub"
-  | "Jest"
-  | "Storybook"
-  | "Apollo"
-  | "NestJS"
-  | "Cypress";
+import { Experience } from "@/types/experience";
 
 export const experience: Experience[] = [
   {
     companyName: "Lapzo",
     role: "Software Engineer",
-    date: "2022 May - 2025 March",
+    date: "2022 May - 2025 Mar",
     description: {
       en: [
         "Lapzo is a talent management platform that enhances employee skills through gamified learning paths, on-demand courses, and aligns objectives using the OKR methodology.",
@@ -51,7 +15,7 @@ export const experience: Experience[] = [
         "Trabajé en la migración de una aplicación React a una versión más reciente, manejando la integración de TypeScript y desarrollando nuevas pantallas y características desde cero.",
       ],
     },
-    technologies: ["Node.js", "React", "Storybook", "NestJS", "PostgreSQL"],
+    technologies: ["NodeJs", "React", "Storybook", "NestJs", "Postgres"],
   },
   {
     companyName: "Inetum",
@@ -68,18 +32,18 @@ export const experience: Experience[] = [
       ],
     },
     technologies: [
-      "Node.js",
+      "NodeJs",
       "React",
-      "Next.js",
-      "Material UI",
-      "PostgreSQL",
+      "NextJs",
+      "MaterialUI",
+      "Postgres",
       "Apollo",
     ],
   },
   {
     companyName: "Jabu",
     role: "Software Engineer",
-    date: "2020 Mar - 2021 August",
+    date: "2020 Mar - 2021 Aug",
     description: {
       en: [
         "Jabu is a fintech company that develops digital solutions to improve payments and logistics, helping businesses transition from cash-based operations to a more efficient digital ecosystem.",
@@ -91,12 +55,12 @@ export const experience: Experience[] = [
       ],
     },
     technologies: [
-      "Node.js",
+      "NodeJs",
       "React",
-      "Tailwind CSS",
+      "Tailwind",
       "Storybook",
       "Prisma",
-      "DynamoDB",
+      "Postgres",
     ],
   },
 ];

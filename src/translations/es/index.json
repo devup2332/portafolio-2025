@@ -28,5 +28,13 @@
         "description": "Desarrollo software de alta calidad gracias a Clean Architecture. Siempre utilizo estos principios para un software de calidad."
       }
     }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Un resumen de mi experiencia profesional en la industria de TI"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Lista de proyectos en los que trabajé durante mi experiencia en la industria de TI"
   }
 }
