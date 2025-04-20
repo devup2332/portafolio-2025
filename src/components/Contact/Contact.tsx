@@ -1,0 +1,173 @@
+import { useTranslation } from "react-i18next";
+import EmailIcon from "../Icons/EmailIcon";
+import LinkedinIcon from "../Icons/LinkedinIcon";
+import InstagramIcon from "../Icons/InstagramIcon";
+import FormField from "../FormField/FormField";
+import Button from "../Button/Button";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  ContactSchema,
+  contactSchema,
+  ContactSchemaFields,
+} from "@/schemas/contactSchema";
+import CodeIcon from "../Icons/CodeIcon";
+import GithubIcon from "../Icons/GithubIcon";
+import LoaderIcon from "../Icons/LoaderIcon";
+import { useState } from "react";
+import { sleep } from "@/utils/sleep";
+
+type Field = {
+  name: ContactSchemaFields;
+  label: string;
+  placeholder: string;
+  type: string;
+};
+
+const links = [
+  {
+    icon: LinkedinIcon,
+    label: "Linkedin",
+    url: "https://www.linkedin.com/in/drojascam/",
+  },
+  {
+    icon: InstagramIcon,
+    label: "Instagram",
+    url: "https://www.instagram.com/drojas912/",
+  },
+  {
+    icon: GithubIcon,
+    label: "GitHub",
+    url: "https://github.com/devup2332",
+  },
+];
+const fields: Field[] = [
+  {
+    name: "name",
+    label: "contact.form.fields.name.label",
+    placeholder: "contact.form.fields.name.placeholder",
+    type: "text",
+  },
+  {
+    name: "email",
+    label: "contact.form.fields.email.label",
+    placeholder: "contact.form.fields.email.placeholder",
+    type: "email",
+  },
+  {
+    name: "subject",
+    label: "contact.form.fields.subject.label",
+    placeholder: "contact.form.fields.subject.placeholder",
+    type: "text",
+  },
+  {
+    name: "message",
+    label: "contact.form.fields.message.label",
+    placeholder: "contact.form.fields.message.placeholder",
+    type: "textarea",
+  },
+];
+
+const Contact = () => {
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const sendMessage = async (data: ContactSchema) => {
+    setLoading(true);
+    await sleep(2000);
+    setLoading(false);
+    console.log({ data });
+  };
+  const handleError = () => {
+    console.log({ errors });
+    console.log({ vals: getValues() });
+  };
+  return (
+    <div id="contact">
+      <h1 className="text-text-1 text-[32px] font-bold">
+        {t("contact.title")}
+      </h1>
+      <h2 className="text-text-2 text-sm mt-3">{t("contact.subtitle")}</h2>
+      <div className="grid gap-8 mt-16 text-sm">
+        <div className="flex items-center gap-4">
+          <EmailIcon className="w-6 h-6 text-primary stroke-current" />
+          <p className="text-text-1">devup2332@gmail.com</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <LinkedinIcon className="w-6 h-6 text-primary stroke-current" />
+          <p className="text-text-1">linkedin.com/in/drojascam</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <InstagramIcon className="w-6 h-6 text-primary stroke-current" />
+          <p className="text-text-1">instagram.com/drojas912</p>
+        </div>
+      </div>
+
+      <form
+        className="mt-18 grid gap-4"
+        onSubmit={handleSubmit(sendMessage, handleError)}
+      >
+        {fields.map((field) => {
+          const { name, label, placeholder, type } = field;
+          const error = errors[name] ? errors[name].message : "";
+          return (
+            <FormField
+              key={name}
+              register={register}
+              error={error}
+              name={name}
+              label={label}
+              placeholder={placeholder}
+              type={type}
+            />
+          );
+        })}
+
+        <Button
+          type="submit"
+          className="w-full flex justify-center items-center gap-4"
+          variant="primary"
+        >
+          {loading && <LoaderIcon className="w-6 h-6 animate-spin" />}
+          {t("contact.form.button")}
+        </Button>
+      </form>
+
+      <div className="mt-20 grid gap-3 justify-center">
+        <div className="flex justify-center items-center gap-3">
+          <CodeIcon className="w-6 h-6 text-text-1 stroke-current" />
+          <span className="font-bold text-xl">{t("footer.title")}</span>
+        </div>
+        <div className="flex gap-3 items-center justify-center">
+          {links.map((link, index) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="outline-none"
+              >
+                <Icon className="w-6 h-6" />
+              </a>
+            );
+          })}
+        </div>
+        <p className="text-text-2 text-sm text-center">
+          {t("footer.description")}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

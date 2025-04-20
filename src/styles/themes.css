@@ -37,7 +37,7 @@
   --light-text-2: #6b7392;
   --light-text-3: #ffffff;
   --light-badge: #c1cdfb;
-  --light-glass-1: rgba(200, 208, 239, 0.1);
+  --light-glass-1: rgba(200, 208, 239, 0.5);
   --light-radial-1: radial-gradient(
     circle,
     rgba(218, 226, 255, 1) 0%,
@@ -82,6 +82,7 @@ html.light {
   --text-2: var(--light-text-2);
   --text-3: var(--light-text-3);
   --badge: var(--light-badge);
+  --glass-1: var(--light-glass-1);
   --radial-1: var(--light-radial-1);
   --radial-2: var(--light-radial-2);
   --linear-1: var(--light-linear-1);

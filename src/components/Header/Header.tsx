@@ -4,12 +4,29 @@ import Button from "../Button/Button";
 import MoonIcon from "../Icons/MoonIcon";
 import { useThemeStore } from "@/store/themeStore";
 import SunIcon from "../Icons/SunIcon";
+import { useEffect } from "react";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const { setTheme, theme } = useThemeStore();
+
+  useEffect(() => {
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      if (!header) return;
+      const scrollY = window.scrollY;
+      if (scrollY > header.clientHeight) {
+        header.classList.add("opacity-0", "hidden");
+      } else {
+        header.classList.remove("opacity-0", "hidden");
+      }
+    });
+  }, []);
   return (
-    <div className="flex justify-between mt-6">
+    <div
+      className="flex top-0 left-0 px-8 justify-between pt-6 fixed w-full transition-all"
+      id="header"
+    >
       <Button
         variant="ghost"
         className="px-0 flex items-center gap-2 text-text-1"

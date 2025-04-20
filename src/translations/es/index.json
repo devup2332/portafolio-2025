@@ -36,5 +36,47 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Lista de proyectos en los que trabajé durante mi experiencia en la industria de TI"
+  },
+  "contact": {
+    "title": "Contactame",
+    "subtitle": "Si quieres ponerte en contacto conmigo y hablar sobre un proyecto",
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Ingresa tu nombre completo aquí",
+          "errors": {
+            "required": "Ingrese su nombre"
+          }
+        },
+        "email": {
+          "label": "Correo",
+          "placeholder": "correo@gmail.com",
+          "errors": {
+            "required": "Ingrese un correo",
+            "invalid": "El correo es inválido"
+          }
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Ingresa un asunto aquí",
+          "errors": {
+            "required": "Ingrese algun asunto"
+          }
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "El mensaje está aquí ...",
+          "errors": {
+            "required": "Ingrese un mensaje"
+          }
+        }
+      },
+      "button": "Enviar mensaje"
+    }
+  },
+  "footer": {
+    "title": "Diego Rojas",
+    "description": "© 2025 Diego Rojas. Todos los derechos reservados."
   }
 }

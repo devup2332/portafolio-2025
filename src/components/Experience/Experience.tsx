@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const Experience = () => {
   const { t, i18n } = useTranslation();
   return (
-    <div className="mt-[120px]">
+    <div className="pb-[120px]" id="experience">
       <h1 className="text-text-1 text-[32px] font-bold">
         {t("experience.title")}
       </h1>
@@ -22,14 +22,23 @@ const Experience = () => {
                 <span className="text-xs">{item.date}</span>
               </div>
               <div className="grid gap-3 mt-8">
-                {item.description[i18n.language as "en" | "es"].map((desc) => {
-                  return <p className="text-xs">{desc}</p>;
-                })}
+                {item.description[i18n.language as "en" | "es"].map(
+                  (desc, i) => {
+                    return (
+                      <p key={i} className="text-xs">
+                        {desc}
+                      </p>
+                    );
+                  },
+                )}
               </div>
               <div className="flex flex-wrap gap-4 mt-[18px]">
-                {item.technologies.map((tech) => {
+                {item.technologies.map((tech, i) => {
                   return (
-                    <span className="text-xs bg-badge rounded-full px-4 py-1">
+                    <span
+                      key={i}
+                      className="text-xs bg-badge rounded-full px-4 py-1"
+                    >
                       {tech}
                     </span>
                   );

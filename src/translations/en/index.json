@@ -36,5 +36,47 @@
   "projects": {
     "title": "Projects",
     "subtitle": "List of projects where i worked on during my experience in IT industry"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "If you want to get in touch with me and talk about a project",
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Enter your full name here",
+          "errors": {
+            "required": "Name is required"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "email@gmail.com",
+          "errors": {
+            "required": "Email is required",
+            "invalid": "Email is invalid"
+          }
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Enter a subject here",
+          "errors": {
+            "required": "Subject is required"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Message is here ...",
+          "errors": {
+            "required": "Message is required"
+          }
+        }
+      },
+      "button": "Send message"
+    }
+  },
+  "footer": {
+    "title": "Diego Rojas",
+    "description": "© 2025 Diego Rojas. All rights reserved."
   }
 }

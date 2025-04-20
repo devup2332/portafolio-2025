@@ -2,6 +2,7 @@ import About from "./components/About/About";
 import Banner from "./components/Banner/Banner";
 import BottomNav from "./components/BottomNav/BottomNav";
 import Bubble from "./components/Bubble/Bubble";
+import Contact from "./components/Contact/Contact";
 import Experience from "./components/Experience/Experience";
 import Header from "./components/Header/Header";
 import Projects from "./components/Projects/Projects";
@@ -25,6 +26,7 @@ const App = () => {
         color="var(--radial-2)"
         className="right-0 translate-x-[500px] -translate-y-[500px]"
       />
+      <Contact />
     </div>
   );
 };
