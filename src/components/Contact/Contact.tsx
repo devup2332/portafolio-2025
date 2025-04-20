@@ -6,23 +6,13 @@ import FormField from "../FormField/FormField";
 import Button from "../Button/Button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  ContactSchema,
-  contactSchema,
-  ContactSchemaFields,
-} from "@/schemas/contactSchema";
+import { ContactSchema, contactSchema } from "@/schemas/contactSchema";
 import CodeIcon from "../Icons/CodeIcon";
 import GithubIcon from "../Icons/GithubIcon";
 import LoaderIcon from "../Icons/LoaderIcon";
 import { useState } from "react";
 import { sleep } from "@/utils/sleep";
-
-type Field = {
-  name: ContactSchemaFields;
-  label: string;
-  placeholder: string;
-  type: string;
-};
+import { contactFields } from "@/config/contactFields";
 
 const links = [
   {
@@ -41,32 +31,6 @@ const links = [
     url: "https://github.com/devup2332",
   },
 ];
-const fields: Field[] = [
-  {
-    name: "name",
-    label: "contact.form.fields.name.label",
-    placeholder: "contact.form.fields.name.placeholder",
-    type: "text",
-  },
-  {
-    name: "email",
-    label: "contact.form.fields.email.label",
-    placeholder: "contact.form.fields.email.placeholder",
-    type: "email",
-  },
-  {
-    name: "subject",
-    label: "contact.form.fields.subject.label",
-    placeholder: "contact.form.fields.subject.placeholder",
-    type: "text",
-  },
-  {
-    name: "message",
-    label: "contact.form.fields.message.label",
-    placeholder: "contact.form.fields.message.placeholder",
-    type: "textarea",
-  },
-];
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -74,7 +38,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    getValues,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(contactSchema),
@@ -84,11 +48,11 @@ const Contact = () => {
     setLoading(true);
     await sleep(2000);
     setLoading(false);
+    reset();
     console.log({ data });
   };
   const handleError = () => {
     console.log({ errors });
-    console.log({ vals: getValues() });
   };
   return (
     <div id="contact">
@@ -115,7 +79,7 @@ const Contact = () => {
         className="mt-18 grid gap-4"
         onSubmit={handleSubmit(sendMessage, handleError)}
       >
-        {fields.map((field) => {
+        {contactFields.map((field) => {
           const { name, label, placeholder, type } = field;
           const error = errors[name] ? errors[name].message : "";
           return (

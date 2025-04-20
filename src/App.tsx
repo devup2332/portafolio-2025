@@ -19,12 +19,13 @@ const App = () => {
       <Banner />
       <Bubble color="var(--radial-2)" className="right-0 translate-x-[500px]" />
       <About />
-      <Experience />
       <Bubble color="var(--radial-1)" className="left-0 -translate-x-[500px]" />
+      <Experience />
+      <Bubble color="var(--radial-2)" className="right-0 translate-x-[500px]" />
       <Projects />
       <Bubble
-        color="var(--radial-2)"
-        className="right-0 translate-x-[500px] -translate-y-[500px]"
+        color="var(--radial-1)"
+        className="left-0 -translate-x-[500px] -translate-y-[500px]"
       />
       <Contact />
     </div>

@@ -8,7 +8,7 @@ const variants = cva(
     variants: {
       variant: {
         primary:
-          "bg-linear-1 from-[#1A46F5] to-[#04229A] text-white bg-gradient-to-b",
+          "bg-linear-1 from-[#1A46F5] to-[#04229A] text-white bg-gradient-to-b hover:from-[#365df7] transition-all",
         ghost: "bg-transparent text-white",
       },
     },
