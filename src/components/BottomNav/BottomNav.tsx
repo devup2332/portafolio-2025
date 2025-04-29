@@ -1,57 +1,9 @@
-import HomeIcon from "../Icons/HomeIcon";
-import UserIcon from "../Icons/UserIcon";
-import ExperienceIcon from "../Icons/ExperienceIcon";
-import ProjectsIcon from "../Icons/ProjectsIcon";
-import EmailIcon from "../Icons/EmailIcon";
 import { useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
-import { Icon } from "@/types/svg";
+import { appSections, Section } from "@/config/appSections";
 
-type Section = {
-  icon: React.FC<Icon>;
-  label: string;
-  id: string;
-  inView: boolean;
-  position?: {
-    y1: number;
-    y2: number;
-  };
-};
-const initial: Section[] = [
-  {
-    icon: HomeIcon,
-    label: "Home",
-    id: "banner",
-    inView: false,
-  },
-
-  {
-    icon: UserIcon,
-    label: "About",
-    id: "about",
-    inView: false,
-  },
-  {
-    icon: ExperienceIcon,
-    label: "Experience",
-    id: "experience",
-    inView: false,
-  },
-  {
-    icon: ProjectsIcon,
-    label: "Projects",
-    id: "projects",
-    inView: false,
-  },
-  {
-    icon: EmailIcon,
-    label: "Contact",
-    id: "contact",
-    inView: false,
-  },
-];
 const BottomNav = () => {
-  const [sections, setSections] = useState<Section[]>(initial);
+  const [sections, setSections] = useState<Section[]>(appSections);
   const goToSection = (id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
@@ -70,26 +22,26 @@ const BottomNav = () => {
   const startScroll = () => {
     let accumulated = 0;
     const offset = 200;
-    const mapped: Section[] = [];
 
-    sections.forEach((s, i) => {
+    const mapped: Section[] = sections.map((s, i) => {
       const element = document.getElementById(s.id);
 
-      if (!element) return;
+      if (!element) return s;
 
       const dimensions = element.getBoundingClientRect();
 
       const y2 =
         i === 0 ? dimensions.height - offset : accumulated + dimensions.height;
 
-      mapped.push({
+      const returned = {
         ...s,
         position: {
           y1: accumulated,
           y2,
         },
-      });
+      };
       accumulated = y2;
+      return returned;
     });
     mapped.forEach((s) => {
       if (window.scrollY >= s.position!.y1 && window.scrollY < s.position!.y2) {
@@ -107,8 +59,8 @@ const BottomNav = () => {
     };
   }, []);
   return (
-    <div className="px-8  fixed bottom-6 w-full left-1/2 -translate-x-1/2">
-      <div className="flex justify-around items-center border-[1px] rounded-md border-border-1 h-[60px] bottomNav">
+    <div className="px-8 fixed bottom-6 w-full left-1/2 -translate-x-1/2 lg:hidden">
+      <div className="flex max-w-lg m-auto justify-around items-center border-[1px] rounded-md border-border-1 h-[60px] bottomNav">
         {sections.map((section, index) => {
           return (
             <section.icon

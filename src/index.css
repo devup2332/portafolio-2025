@@ -17,6 +17,7 @@
   --color-linear-1: var(--linear-1);
 
   --font-primary: "Inter Variable";
+  --breakpoint-3xl: 120rem;
 }
 
 .bottomNav {
