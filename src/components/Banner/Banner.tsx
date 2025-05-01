@@ -27,17 +27,17 @@ const Banner = () => {
   return (
     <div className="h-screen grid place-items-center" id="banner">
       <div className="text-text-1 -translate-y-4 lg:flex">
-        <div className="lg:w-6/12 lg:flex lg:flex-col lg:justify-center">
-          <h1 className="text-5xl font-bold lg:text-7xl">
+        <div className="lg:w-6/12 lg:flex lg:flex-col lg:justify-center xl:w-5/12">
+          <h1 className="text-5xl font-bold lg:text-6xl xl:text-7xl">
             {t("banner.title")}
           </h1>
-          <h2 className="text-base mt-3 font-medium lg:mt-4">
+          <h2 className="text-base mt-3 lg:mt-4 font-medium">
             {t("banner.subtitle")}
           </h2>
-          <p className="text-text-2 mt-4 lg:text-base">
+          <p className="text-text-2 mt-4 lg:mt-8 text-sm lg:text-base">
             {t("banner.description")}
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-6 lg:mt-8">
             {links.map((link, index) => {
               const Icon = link.icon;
               return (
@@ -46,7 +46,7 @@ const Banner = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="outline-none mt-6"
+                  className="outline-none"
                 >
                   <Icon className="w-6 h-6" />
                 </a>
@@ -61,7 +61,7 @@ const Banner = () => {
             </Button>
           </div>
         </div>
-        <div className="hidden lg:block w-6/12">
+        <div className="hidden lg:block w-6/12 xl:w-7/12">
           <img
             className="w-full h-full object-cover"
             src="/images/banner.png"
