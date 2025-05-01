@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div
-      className="flex top-0 left-0 lg:px-8 z-10 justify-between pt-6 lg:fixed w-full transition-colors lg:h-20 lg:pt-0 lg:border-b-[1px] lg:border-b-border-1"
+      className="flex top-0 left-0 lg:px-8 z-10 justify-between pt-6 lg:fixed w-full transition-colors lg:h-20 lg:pt-0 lg:border-b-[1px] lg:border-b-border-1 animate-fade animate-duration-1000"
       id="header"
     >
       <div className="flex justify-between items-center w-full max-w-lg m-auto lg:max-w-4xl 2xl:max-w-6xl 3xl:max-w-[1200px]">
