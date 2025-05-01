@@ -26,7 +26,7 @@ const links = [
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <div className="h-screen grid place-items-center" id="banner">
+    <div className="h-dvh grid place-items-center" id="banner">
       <div className="text-text-1 -translate-y-4 lg:flex">
         <div className="lg:w-6/12 lg:flex lg:flex-col lg:justify-center xl:w-5/12">
           <h1 className="text-5xl font-bold lg:text-6xl xl:text-7xl">
