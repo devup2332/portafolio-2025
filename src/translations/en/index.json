@@ -41,6 +41,10 @@
     "title": "Get in touch",
     "subtitle": "If you want to get in touch with me and talk about a project",
     "form": {
+      "messages": {
+        "success": "Message sent successfully",
+        "error": "Error sending message"
+      },
       "fields": {
         "name": {
           "label": "Full name",

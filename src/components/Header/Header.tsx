@@ -8,27 +8,12 @@ import { cn } from "@/utils/cn";
 import { appSections } from "@/config/appSections";
 import { useEffect } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { goToSection } from "@/utils/sections";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const { setTheme, theme } = useThemeStore();
   const isMobile = useMediaQuery("(max-width: 768px)");
-
-  const goToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    let y = 0;
-
-    for (const s of appSections) {
-      const elementHeight = document.getElementById(s.id)?.clientHeight;
-      if (!elementHeight || s.id === id) break;
-      y += elementHeight;
-    }
-    window.scrollTo({
-      top: y - 100,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     const listener = () => {
@@ -40,6 +25,7 @@ const Header = () => {
         header.classList.remove("bg-bg-1");
       }
     };
+    listener();
     window.addEventListener("scroll", listener);
 
     return () => {
@@ -49,7 +35,7 @@ const Header = () => {
 
   return (
     <div
-      className="flex top-0 left-0 px-8 z-10 justify-between pt-6 fixed w-full transition-colors lg:h-20 lg:pt-0 lg:border-b-[1px] lg:border-b-border-1"
+      className="flex top-0 left-0 lg:px-8 z-10 justify-between pt-6 lg:fixed w-full transition-colors lg:h-20 lg:pt-0 lg:border-b-[1px] lg:border-b-border-1"
       id="header"
     >
       <div className="flex justify-between items-center w-full max-w-lg m-auto lg:max-w-4xl 2xl:max-w-6xl 3xl:max-w-[1200px]">
@@ -66,7 +52,7 @@ const Header = () => {
             return (
               <li
                 className={cn(
-                  "text-sm cursor-pointer",
+                  "text-sm cursor-pointer hover:text-primary transition-colors",
                   section.inView && "text-primary",
                 )}
                 onClick={() => goToSection(section.id)}
@@ -79,14 +65,14 @@ const Header = () => {
         </ul>
         <div className="flex items-center gap-4">
           <Button
-            className="p-2"
+            className="p-2 text-text-1 transition-colors hover:text-primary"
             variant="ghost"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             {theme === "dark" ? (
-              <MoonIcon className="w-6 h-6 text-text-1" />
+              <MoonIcon className="w-6 h-6 stroke-current" />
             ) : (
-              <SunIcon className="w-6 h-6 text-text-1" />
+              <SunIcon className="w-6 h-6 stroke-current" />
             )}
           </Button>
           <Button

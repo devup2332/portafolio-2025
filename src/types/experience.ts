@@ -9,4 +9,5 @@ export type Experience = {
     es: string[];
   };
   technologies: Technology[];
+  className?: string;
 };

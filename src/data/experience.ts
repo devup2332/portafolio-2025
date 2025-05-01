@@ -44,6 +44,8 @@ export const experience: Experience[] = [
     companyName: "Jabu",
     role: "Software Engineer",
     date: "2020 Mar - 2021 Aug",
+    className:
+      "lg:col-span-2 lg:justify-self-center lg:max-w-[432px] 2xl:col-start-3",
     description: {
       en: [
         "Jabu is a fintech company that develops digital solutions to improve payments and logistics, helping businesses transition from cash-based operations to a more efficient digital ecosystem.",

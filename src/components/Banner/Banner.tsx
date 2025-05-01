@@ -3,6 +3,7 @@ import GithubIcon from "../Icons/GithubIcon";
 import LinkedinIcon from "../Icons/LinkedinIcon";
 import InstagramIcon from "../Icons/InstagramIcon";
 import Button from "../Button/Button";
+import { goToSection } from "@/utils/sections";
 
 const links = [
   {
@@ -46,7 +47,7 @@ const Banner = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="outline-none"
+                  className="outline-none hover:text-primary lg:hover:scale-110 transition-all"
                 >
                   <Icon className="w-6 h-6" />
                 </a>
@@ -55,8 +56,14 @@ const Banner = () => {
           </div>
 
           <div className="mt-6">
-            <Button variant="primary">{t("banner.buttons.contact")}</Button>
-            <Button variant="ghost" className="text-text-2">
+            <Button variant="primary" onClick={() => goToSection("contact")}>
+              {t("banner.buttons.contact")}
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-text-2"
+              onClick={() => goToSection("projects")}
+            >
               {t("banner.buttons.projects")}
             </Button>
           </div>

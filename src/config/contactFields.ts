@@ -23,6 +23,7 @@ export const contactFields: Field[] = [
     name: "message",
     label: "contact.form.fields.message.label",
     placeholder: "contact.form.fields.message.placeholder",
+    className: "2xl:col-span-2",
     type: "textarea",
   },
 ];

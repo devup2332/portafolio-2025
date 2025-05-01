@@ -34,11 +34,15 @@ const items = [
 const About = () => {
   const { t } = useTranslation();
   return (
-    <div id="about" className="pb-[120px]">
-      <h1 className="text-text-1 text-[32px] font-bold">{t("about.title")}</h1>
-      <h2 className="text-text-2 text-sm">{t("about.subtitle")}</h2>
+    <div id="about" className="pb-[120px] lg:pb-[200px]">
+      <h1 className="text-text-1 text-[32px] font-bold xl:text-4xl">
+        {t("about.title")}
+      </h1>
+      <h2 className="text-text-2 text-sm mt-3 lg:text-base xl:text-lg">
+        {t("about.subtitle")}
+      </h2>
 
-      <div className="mt-16 grid gap-16 px-5 lg:px-0 lg:grid lg:grid-cols-3 lg:gap-8 xl:gap-12">
+      <div className="mt-16 grid gap-16 px-5 lg:px-0 lg:grid lg:grid-cols-3 lg:gap-8 2xl:gap-12">
         {items.map((item, index) => {
           const HeaderIcon = item.headerIcon;
           const icons = item.icons.map((Icon, index) => (

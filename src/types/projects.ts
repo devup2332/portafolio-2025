@@ -7,6 +7,7 @@ export type Project = {
     es: string[];
   };
   subtitle: string;
+  className?: string;
   status: string;
   imageUrl: string;
   technologies: Technology[];

@@ -12,6 +12,7 @@ type Props = {
   register: UseFormRegister<ContactSchema>;
   error?: string;
   errorsState?: FieldErrors<FieldValues>;
+  className?: string;
 };
 
 const FormField: React.FC<Props> = ({
@@ -21,11 +22,14 @@ const FormField: React.FC<Props> = ({
   error,
   type,
   register,
+  className,
 }) => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col gap-3">
-      <label className={cn("font-sm text-text-1", error && "text-red-500")}>
+    <div className={cn("flex flex-col gap-3", className)}>
+      <label
+        className={cn("font-sm text-text-1 text-sm", error && "text-red-500")}
+      >
         {t(label)}
       </label>
       {type === "textarea" ? (

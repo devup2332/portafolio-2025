@@ -41,6 +41,11 @@
     "title": "Contactame",
     "subtitle": "Si quieres ponerte en contacto conmigo y hablar sobre un proyecto",
     "form": {
+      "messages": {
+        "success": "Mensaje enviado con éxito",
+        "error": "Error al enviar el mensaje"
+      },
+
       "fields": {
         "name": {
           "label": "Nombre",
