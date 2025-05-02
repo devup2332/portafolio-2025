@@ -49,7 +49,7 @@ export const projects: Project[] = [
     subtitle: "Backoffice for e-commerce",
     status: "Finished",
     className:
-      "lg:col-span-2 lg:justify-self-center lg:max-w-[400px] 2xl:col-start-3",
+      "lg:col-span-2 lg:justify-self-center lg:max-w-[400px] 2xl:col-start-3 2xl:col-end-4",
     imageUrl:
       "https://cdn.dribbble.com/userupload/42958226/file/original-6b0860a5a3e00e5cd40593e09d1b7061.png?resize=752x&vertical=center",
     description: {
