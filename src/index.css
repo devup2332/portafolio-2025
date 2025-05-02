@@ -3,6 +3,8 @@
 @import "@fontsource-variable/inter";
 @import "./styles/themes.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: var(--primary);
   --color-bg-1: var(--bg-1);

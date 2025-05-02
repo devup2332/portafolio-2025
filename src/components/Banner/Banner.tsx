@@ -58,7 +58,7 @@ const Banner = () => {
             })}
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex gap-4">
             <Button variant="primary" onClick={() => goToSection("contact")}>
               {t("banner.buttons.contact")}
             </Button>
